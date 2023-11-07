@@ -1,0 +1,11 @@
+name: main
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  call-workflow-passing-data:
+    uses: GKprojects/url-shortener-angular/.github/workflows/npmbuild_and_test.yaml@master
+    with:
+      config-path: .github/labeler.yml
+    secrets:
+      envPAT: ${{ secrets.envPAT }}
